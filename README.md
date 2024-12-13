@@ -1,8 +1,3 @@
----
-title: Untitled
-
----
-
 # ﻿Financial Line_bot
 歡迎使用投資理財小幫手😀
 本系統提供三大功能:
@@ -13,8 +8,8 @@ title: Untitled
 🌟 隱藏功能 🌟
 聊天室中輸入: 推薦 or 推薦系統，即可透過LIFF去呼叫該網站 
 
+![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
-![S__6348803](https://hackmd.io/_uploads/HkJoUkcV1g.jpg =80%x)
 
 
 ## 系統架構圖:
