@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFF Example</title>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+    <h1>Welcome to LIFF</h1>
+    <button id="loginButton">Login</button>
+    <button id="logoutButton" style="display:none;">Logout</button>
+    <div id="profile" style="display:none;">
+        <h2>User Profile</h2>
+        <img id="userPicture" src="" alt="User Picture" style="width:100px; height:100px;">
+        <p id="userName"></p>
+        <p id="userId"></p>
+    </div>
+
+    <script>
+        // 初始化 LIFF
+        liff.init({
+            liffId: "2006664266-zXG3xyNe"
+        }).then(() => {
+            console.log("LIFF 初始化完成");
+
+            if (liff.isLoggedIn()) {
+                showProfile();
+            } else {
+                document.getElementById("loginButton").style.display = "block";
+            }
+        }).catch(err => {
+            console.error("LIFF 初始化失敗", err);
+        });
+
+        // 登入功能
+        document.getElementById("loginButton").addEventListener("click", () => {
+            if (!liff.isLoggedIn()) {
+                liff.login();
+            }
+        });
+
+        // 登出功能
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            if (liff.isLoggedIn()) {
+                liff.logout();
+                location.reload();
+            }
+        });
+
+        function showProfile() {
+            liff.getProfile().then(profile => {
+                document.getElementById("loginButton").style.display = "none";
+                document.getElementById("logoutButton").style.display = "block";
+                document.getElementById("profile").style.display = "block";
+
+                document.getElementById("userPicture").src = profile.pictureUrl;
+                document.getElementById("userName").textContent = `Name: ${profile.displayName}`;
+                document.getElementById("userId").textContent = `User ID: ${profile.userId}`;
+            }).catch(err => {
+                console.error("無法取得用戶資訊", err);
+            });
+        }
+
+    </script>
+</body>
+</html>
