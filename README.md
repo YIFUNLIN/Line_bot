@@ -8,7 +8,7 @@
 🌟 隱藏功能 🌟
 聊天室中輸入: 推薦 or 推薦系統，即可透過LIFF去呼叫該網站 
 
-![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
+![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
 
 
