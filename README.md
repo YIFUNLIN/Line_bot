@@ -20,8 +20,11 @@
 ![MongoDB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/mongodb.png)
 
 ### 串接股票推薦系統網站 :
+利用 LIFF 進行與 Linebot 的前後端串接
+
 ![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
-特點:
+
+🌟 特點:
 1. 金融指標應用:
 - 結合技術分析指標（MA、RSI、MACD）和數據標準化，優化模型輸入
 - 引入 Sharpe Ratio 和 Maximum Drawdown，評估投資績效
@@ -33,15 +36,9 @@
 - 使用 Jinja2 自動生成報告，結合批次處理支持多檔股票分析、連接 Goodinfo
 - 整體系統架構具有靈活性與可擴展性，適用於不同投資需求
   
-![image](https://github.com/user-attachments/assets/7bca7214-57b7-46ad-b9d8-14c84617a2f0)
-
-- 並利用 LIFF 進行與 Linebot 的前後端串接
-
-https://yifunlin.github.io/stock/stock_report.html
-
 - 此系統是基於 Github Action 自動每日進行排程更新
 
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
 程式碼: https://github.com/YIFUNLIN/stock/tree/main
-
+網站: https://yifunlin.github.io/stock/stock_report.html
