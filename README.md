@@ -8,7 +8,7 @@
 🌟 隱藏功能 🌟
 聊天室中輸入: 推薦 or 推薦系統，即可透過LIFF去呼叫該網站 
 
-![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
+![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
 
 
@@ -17,10 +17,10 @@
 
 ### 系統後台 :
 1. 串接MongoDB Atlas
-![image](https://hackmd.io/_uploads/S1hy_J941l.png)
+![MongoDB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/mongodb.png)
 
 ### 串接股票推薦系統網站 :
-![image](https://hackmd.io/_uploads/SyhO_1941g.png)
+![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
 - 利用 LIFF 進行前後端串接此系統
 
@@ -28,7 +28,7 @@ https://yifunlin.github.io/stock/stock_report.html
 
 - 此系統是基於 Github Action 自動每日進行排程更新
 
-![image](https://hackmd.io/_uploads/SyI-tJqNyg.png)
+![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
 程式碼: https://github.com/YIFUNLIN/stock/tree/main
 
