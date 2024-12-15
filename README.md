@@ -1,5 +1,8 @@
 # ﻿Financial Line_bot
 歡迎使用投資理財小幫手😀
+
+影片連結: https://www.youtube.com/watch?v=LrBWKAA-1_Q
+
 本系統提供三大功能:
 1. 財報分析: 輸入股票代號與年份(eg. 2330 112)，即可自動爬找該公司年報並交由AI分析
 2. 推薦系統: 每日進行標的更新，背後透過交易策略、技術指標(Markov chains、RSI等等)自動幫你篩選
