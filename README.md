@@ -10,8 +10,6 @@
 
 ![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
-
-
 ## 系統架構圖:
 (待更)
 
@@ -46,4 +44,3 @@
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
 程式碼: https://github.com/YIFUNLIN/stock/tree/main
-網站: https://yifunlin.github.io/stock/stock_report.html
