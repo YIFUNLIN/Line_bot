@@ -5,8 +5,8 @@
 2. 推薦系統: 每日進行標的更新，背後透過交易策略、技術指標(Markov chains、RSI等等)自動幫你篩選
 3. 近況分析: 輸入股票代號(eg. 2330)，即可爬取該股的新聞
 
-🌟 隱藏功能 🌟
-聊天室中輸入: 推薦 or 推薦系統，即可透過LIFF去呼叫該網站 
+🌟 驗證功能 🌟
+使用推薦系統時，需要先進行註冊or Line 的 LIFF 驗證才可使用哦 !
 
 ![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
