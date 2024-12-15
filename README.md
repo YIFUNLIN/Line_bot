@@ -16,8 +16,13 @@
 (待更)
 
 ### 系統後台 :
-1. 串接MongoDB Atlas
+1. 串接MongoDB Atlas 存放財報分析時所爬取的年報
+若日後需要用到相同資料，則直接從DB拿取，以提升系統運作效率
 ![MongoDB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/mongodb.png)
+
+2. 存放使用者註冊資料，並於登錄時進行比對
+<img width="684" alt="image" src="https://github.com/user-attachments/assets/9389948e-b2d9-4764-a9a7-b9c25d5dede6" />
+
 
 ### 串接股票推薦系統網站 :
 利用 LIFF 進行與 Linebot 的前後端串接
