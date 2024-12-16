@@ -14,7 +14,7 @@
 ![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
 ## 系統架構圖:
-![Line實習專案開發.drawio](https://hackmd.io/_uploads/S1MPaWp4ye.png)
+![Line實習專案開發.drawio]()
 
 ### 系統後台 :
 1. 串接MongoDB Atlas 存放財報分析時所爬取的年報
