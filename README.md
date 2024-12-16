@@ -2,7 +2,7 @@
 歡迎使用投資理財小幫手😀
 
 - 影片連結: https://www.youtube.com/watch?v=LrBWKAA-1_Q
-- 前端程式碼: https://github.com/YIFUNLIN/React_Line_bot_project
+- 前端React程式碼: https://github.com/YIFUNLIN/React_Line_bot_project
 - 推薦系統程式碼: https://github.com/YIFUNLIN/stock
   
 本系統提供三大功能:
