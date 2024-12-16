@@ -48,4 +48,3 @@
 
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
-程式碼: https://github.com/YIFUNLIN/stock/tree/main
