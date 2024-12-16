@@ -13,6 +13,14 @@
 🌟 驗證功能 🌟
 使用推薦系統時，需要先進行註冊or Line 的 LIFF 驗證才可使用哦 !
 
+🌟 技術 🌟
+1. 前端: React
+2. 後端: Flask
+3. 驗證機制: LIFF (LINE Front-end Framework)
+4. 資料庫: MongoDB Atlas
+5. RAG技術: LangChain
+6. API: gpt-4o-mini
+
 ![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
 ## 系統架構圖:
