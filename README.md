@@ -10,10 +10,10 @@
 2. 推薦系統: 每日進行標的更新，背後透過交易策略、技術指標(Markov chains、RSI等等)自動幫你篩選
 3. 近況分析: 輸入股票代號(eg. 2330)，即可爬取該股的新聞
 
-🌟 驗證功能 🌟
+### 🌟 驗證功能 🌟
 使用推薦系統時，需要先進行註冊or Line 的 LIFF 驗證才可使用哦 !
 
-🌟 技術 🌟
+### 🌟 技術 🌟
 1. 前端: React
 2. 後端: Flask
 3. 驗證機制: LIFF (LINE Front-end Framework)
@@ -56,3 +56,39 @@
 
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
+
+### 🌟 Testing:
+使用 Postman 針對這 4 支 API 進行 Functional Testing (功能測試) 
+- GET : `/` 、`/recommend/` 、`/recommend/<path>`
+- POST: `/api/save_user` 、`/api/login` 
+
+1. 先對 `GET` method 進行 Testing :
+
+`/`
+
+![alt text](image.png)
+
+`/recommend/`
+
+![alt text](image-1.png)
+
+`/recommend/<path>`
+
+![alt text](image-2.png)
+
+2. 針對 `POST`method 進行 Testing :
+
+`/api/save_user` (用來註冊)
+- 利用 POST進行使用 Email 註冊的測試，並成功註冊
+
+![alt text](image-3.png)
+
+資料也自動寫入至 MongoDB
+
+![alt text](image-4.png)
+
+`/api/login` 會去MongoDB 比對有無此筆資料
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
