@@ -22,6 +22,7 @@ OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
 def perform_financial_analysis(stock_id, year):
     pdf_path = f"./{stock_id}_{year}.pdf"  # 預設 PDF 路徑
     try:
+        # 先去DB中查找是否有相同的stock_id和year的財報
         existing_document = collection.find_one({'stock_id': stock_id, 'year': year})
         if existing_document:
             print("已存在，直接從DB中提取")
@@ -30,9 +31,10 @@ def perform_financial_analysis(stock_id, year):
             # 將DB中的pdf content 寫入成文件
             with open(pdf_path, "wb") as f:
                 f.write(pdf_content)
-        else:
+        else:  # DB中找不到的話再去爬蟲
             url = "https://doc.twse.com.tw/server-java/t57sb01"
 
+            # 年報爬蟲code
             # 第一個請求
             data = {
                 'id': '',
@@ -65,7 +67,7 @@ def perform_financial_analysis(stock_id, year):
             href_tag = link.find('a')
             if not href_tag:
                 return "無法找到財報下載連結"
-            download_link = href_tag.get('href')
+            download_link = href_tag.get('href')  
 
             # 下載 PDF 並進行分析
             response = requests.get('https://doc.twse.com.tw' + download_link)
