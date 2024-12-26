@@ -65,30 +65,34 @@
 1. 先對 `GET` method 進行 Testing :
 
 `/`
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image.png)
 
-![alt text](image.png)
 
 `/recommend/`
 
-![alt text](image-1.png)
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-1.png)
 
 `/recommend/<path>`
 
-![alt text](image-2.png)
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-2.png)
+
 
 2. 針對 `POST`method 進行 Testing :
 
 `/api/save_user` (用來註冊)
 - 利用 POST進行使用 Email 註冊的測試，並成功註冊
 
-![alt text](image-3.png)
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-3.png)
+
 
 資料也自動寫入至 MongoDB
 
-![alt text](image-4.png)
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-4.png)
+
 
 `/api/login` 會去MongoDB 比對有無此筆資料
 
-![alt text](image-5.png)
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-5.png)
 
-![alt text](image-6.png)
+
+![testing](https://github.com/YIFUNLIN/Line_bot/blob/main/images/image-6.png)
