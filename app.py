@@ -18,7 +18,7 @@ app = Flask(__name__, static_folder="build/static", template_folder="build") # s
 # CORS: 確保跨資源共享，允許所有來源對所有路徑的請求， 允許跨來源請求攜帶憑證（如 cookies）
 # 開發所有路徑，額外開啟允許跨網域請求攜帶憑證的功能
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-
+API_BASE_URL = "https://6a52-2401-e180-8c80-10d1-8b-6d70-89c1-66f1.ngrok-free.app"
 
 MONGO_URI = os.environ.get('mongodb_endpoint', '')
 client = MongoClient(MONGO_URI)
@@ -66,7 +66,7 @@ def save_user():
             existing_user = collection_profile.find_one({"userId": user_id, "loginType": "LINE"})
             if existing_user:
                 print("LINE 用戶已存在:", existing_user)
-                return jsonify({"message": "用戶已存在"}), 200
+                return jsonify({"message": "用戶已存在", "redirectUrl": "https://yifunlin.github.io/stock/stock_report.html"}), 200
 
         elif login_type == "EMAIL":
             email = user_data.get("email")
@@ -115,7 +115,7 @@ def login_user():
         existing_user = collection_profile.find_one({"email": email, "password": password, "loginType": "EMAIL"})
         if existing_user:
             print("登入成功:", existing_user)
-            return jsonify({"message": "登入成功"}), 200
+            return jsonify({"message": "登入成功", "redirectUrl": "https://yifunlin.github.io/stock/stock_report.html"}), 200
         else:
             return jsonify({"error": "帳號或密碼錯誤"}), 401
 
@@ -149,7 +149,7 @@ def index():
 
                 # 使用者若點擊圖文選單的功能，會回傳對應的 message 文字形式
                 if user_message == '推薦系統' or user_message == '推薦':
-                    react_url = f"https://3a76-2401-e180-8c60-2501-7cae-12fa-2f97-a32e.ngrok-free.app/recommend"  #  指向前端的 React 應用，回傳登入頁面
+                    react_url = f"{API_BASE_URL}/recommend"
 
                     # 設定點選進入登入畫面前的訊息，使用 LINE 的 Flex Message 來設計
                     flex_message = FlexSendMessage(  
