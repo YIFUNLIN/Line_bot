@@ -1,7 +1,7 @@
 # ﻿Financial Line_bot
 歡迎使用投資理財小幫手😀
 
-- 影片連結: https://www.youtube.com/watch?v=LrBWKAA-1_Q
+- 影片連結(12/31更新版): https://www.youtube.com/watch?v=dRLWFH17-NM
 - 前端React程式碼: https://github.com/YIFUNLIN/React_Line_bot_project
 - 推薦系統程式碼: https://github.com/YIFUNLIN/stock
   
@@ -35,6 +35,8 @@
 2. 存放使用者註冊資料，並於登錄時進行比對
 <img width="684" alt="image" src="https://github.com/user-attachments/assets/9389948e-b2d9-4764-a9a7-b9c25d5dede6" />
 
+3. 若使用者透過LINE 進行登入，會觸發liff.getProfile()，將資料回傳到後端
+![LIFF_DB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/LIFF_DB_store.png)
 
 ### 串接股票推薦系統網站 :
 利用 LIFF 進行與 Linebot 的前後端串接
@@ -58,7 +60,7 @@
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
 
-### 🌟 Testing:
+### 🌟 Functional Testing:
 使用 Postman 針對這 4 支 API 進行 Functional Testing (功能測試) 
 - GET : `/` 、`/recommend/` 、`/recommend/<path>`
 - POST: `/api/save_user` 、`/api/login` 
