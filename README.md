@@ -41,6 +41,14 @@
 ### 串接股票推薦系統網站 :
 利用 LIFF 進行與 Linebot 的前後端串接
 
+- Flex message 客製化提供點擊連結
+
+- 先進入會員登入系統
+
+- 可選擇 LINE Login 或 Email 註冊登入
+
+- 登入後即可進入推薦系統
+
 ![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
 🌟 特點:
