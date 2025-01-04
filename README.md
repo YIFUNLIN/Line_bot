@@ -61,19 +61,22 @@
 - 登入後即可進入推薦系統
 ![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
+🌟 系統簡介:
+利用每日的股價資訊，搭配技術指標（如 MA、RSI、MACD）公式計算出訊號以豐富 Dataframe 欄位特徵，並利用這些資料訓練與構建出 LSTM 模型，並基於過去的價格與技術指標預測未來收盤價格。
+根據預測價格與當前價格進行比較，同時搭配 Sharpe Ratio、Markov Chain 進行判斷以觸發買入或賣出信號，最後利用 Jinja2 將後端執行邏輯結果渲染至前端模板，並利用 Github Actions 每日自動排程。
+
 🌟 特點:
-1. 金融指標應用:
-- 結合技術分析指標（MA、RSI、MACD）和數據標準化，優化模型輸入
-- 引入 Sharpe Ratio 和 Maximum Drawdown，評估投資績效
+1. 技術指標與 AI 結合應用 :
+- 結合技術分析指標（MA、RSI、MACD )、Max drawdown、Sharpe Ratio 和 Maximum Drawdown
+- 訓練 LSTM 模型 
+
 2. 程式化交易策略
-- 整合 LSTM 模型預測與 Markov Chain 趨勢分析，自動判斷買賣信號
+- 整合 LSTM 模型進行預測，並搭配Sharpe Ratio、Markov Chain 趨勢分析，自動判斷作為買賣訊號來源
 - 考慮交易成本與滑點，模擬真實交易場景
+
 3. 系統建置技術
-- 採用 Keras Tuner 調整超參數，提升模型效能
-- 使用 Jinja2 自動生成報告，結合批次處理支持多檔股票分析、連接 Goodinfo
-- 整體系統架構具有靈活性與可擴展性，適用於不同投資需求
-  
-- 此系統是基於 Github Action 自動每日進行排程更新
+- 使用 Jinja2 自動生成報告，結合 Github Actions 每日進行排程實現自動更新
+
 
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
 
