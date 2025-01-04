@@ -23,7 +23,7 @@
 
 <img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg" />
 
-![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
+
 
 ## 系統架構圖:
 
@@ -44,14 +44,19 @@
 利用 LIFF 進行與 Linebot 的前後端串接
 
 - Flex message 客製化提供點擊連結
-![Flex](https://github.com/YIFUNLIN/Line_bot/blob/main/images/flex_message.jpg)
+<img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/flex_message.jpg" />
+
 
 - 先進入會員登入系統
-![root_dir](https://github.com/YIFUNLIN/Line_bot/blob/main/images/root_dir.jpg)
+<img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/root_dir.jpg" />
+
 
 - 可選擇 LINE Login 或 Email 註冊登入
-![LINE_login](https://github.com/YIFUNLIN/Line_bot/blob/main/images/Line_login.jpg)
-![Email_reg](https://github.com/YIFUNLIN/Line_bot/blob/main/images/email_register.jpg)
+
+<img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/Line_login.jpg" />
+
+<img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/email_register.jpg" />
+
 
 - 登入後即可進入推薦系統
 ![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
