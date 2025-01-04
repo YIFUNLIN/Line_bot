@@ -18,7 +18,7 @@ app = Flask(__name__, static_folder="build/static", template_folder="build") # s
 # CORS: 確保跨資源共享，允許所有來源對所有路徑的請求， 允許跨來源請求攜帶憑證（如 cookies）
 # 開發所有路徑，額外開啟允許跨網域請求攜帶憑證的功能
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-API_BASE_URL = "https://6a52-2401-e180-8c80-10d1-8b-6d70-89c1-66f1.ngrok-free.app"
+API_BASE_URL = "https://d976-140-123-57-111.ngrok-free.app"
 
 MONGO_URI = os.environ.get('mongodb_endpoint', '')
 client = MongoClient(MONGO_URI)
@@ -115,7 +115,7 @@ def login_user():
         existing_user = collection_profile.find_one({"email": email, "password": password, "loginType": "EMAIL"})
         if existing_user:
             print("登入成功:", existing_user)
-            return jsonify({"message": "登入成功", "redirectUrl": "https://yifunlin.github.io/stock/stock_report.html"}), 200
+            return jsonify({"message": "登入成功", "redirectUrl": "https://yifunlin.github.io/stock/stock_report.html"}), 200   # 給前端接收
         else:
             return jsonify({"error": "帳號或密碼錯誤"}), 401
 
@@ -155,27 +155,85 @@ def index():
                     flex_message = FlexSendMessage(  
                         alt_text="點擊查看網頁",   # 當用戶裝置不支援 Flex Message 時顯示「點擊查看網頁」(不支援 Web 版的 LINE)
                         contents={
-                            "type": "bubble",   
-                            "body": {   
+                            "type": "bubble",
+                            "hero": {
+                                "type": "image",
+                                "size": "full",
+                                "aspectRatio": "20:13",
+                                "aspectMode": "cover",
+                                "action": {
+                                "type": "uri",
+                                "uri": "https://line.me/"
+                                },
+                                "url": "https://raw.githubusercontent.com/YIFUNLIN/Line_bot/refs/heads/main/images/rec_sysyem.png"
+                            },
+                            "body": {
                                 "type": "box",
                                 "layout": "vertical",
                                 "contents": [
-                                    {"type": "text", "text": "推薦系統", "weight": "bold", "align": "center"}
-                                ]
-                            }, 
-                            "footer": {  # 包含一個按鈕，按鈕標籤為「前往網頁」，按下後會跳轉到指定的 react_ur
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "股票買賣推薦系統",
+                                    "weight": "bold",
+                                    "size": "xl"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "margin": "lg",
+                                    "spacing": "sm",
+                                    "contents": [
                                     {
-                                        "type": "button",
-                                        "action": {"type": "uri", "label": "前往網頁", "uri": react_url},
-                                        "style": "primary"
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "spacing": "sm",
+                                        "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": "說明",
+                                            "color": "#aaaaaa",
+                                            "size": "sm",
+                                            "flex": 1
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "使用前需要先登入",
+                                            "wrap": True,
+                                            "color": "#666666",
+                                            "size": "sm",
+                                            "flex": 5
+                                        }
+                                        ]
                                     }
+                                    ]
+                                }
                                 ]
+                            },
+                            "footer": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "spacing": "sm",
+                                "contents": [
+                                {
+                                    "type": "button",
+                                    "style": "link",
+                                    "height": "sm",
+                                    "action": {
+                                    "type": "uri",
+                                    "label": "Login",
+                                    "uri": react_url
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [],
+                                    "margin": "sm"
+                                }
+                                ],
+                                "flex": 0
                             }
-                        }
-                    )
+                            })
                     line_bot_api.reply_message(reply_token, flex_message) # 後端透過 LINE Messaging API 與 LINE 平台通訊，成功發送訊息後，LINE 平台將該訊息推送到用戶的 LINE App => 點擊後跳轉到指定 URL
 
                 # 財報分析功能
