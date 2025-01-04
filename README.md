@@ -21,6 +21,8 @@
 5. RAG技術: LangChain
 6. API: gpt-4o-mini
 
+<img width="684" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg" />
+
 ![main](https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg)
 
 ## 系統架構圖:
