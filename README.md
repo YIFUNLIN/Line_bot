@@ -73,6 +73,7 @@
 ![recommend system](https://github.com/YIFUNLIN/Line_bot/blob/main/images/rec_sysyem.png?raw=true)
 
 🌟 系統簡介:
+
 利用每日的股價資訊，搭配技術指標（如 MA、RSI、MACD）公式計算出訊號以豐富 Dataframe 欄位特徵，並利用這些資料訓練與構建出 LSTM 模型，並基於過去的價格與技術指標預測未來收盤價格。
 根據預測價格與當前價格進行比較，同時搭配 Sharpe Ratio、Markov Chain 進行判斷以觸發買入或賣出信號，最後利用 Jinja2 將後端執行邏輯結果渲染至前端模板，並利用 Github Actions 每日自動排程。
 
