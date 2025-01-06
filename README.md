@@ -42,15 +42,15 @@
 
 ### 串接股票推薦系統網站 :
 #### 1. 前端: 
-- 使用 React 框架構建會員登入系統，實現動態渲染與狀態管理。
-- 使用 Axios 與後端 API 進行交互，完成資料傳遞與操作。
-#### 後端: 
-- 使用 Flask 框架實現後端 API，負責處理前端傳來的請求。
-- 完成用戶資料驗證、登入與註冊邏輯，並與資料庫進行交互。
-#### LIFF:  
+- 使用 React 框架構建會員登入系統，實現動態渲染與狀態管理
+- 使用 Axios 與後端 API 進行交互，完成資料傳遞與操作
+#### 2. 後端: 
+- 使用 Flask 框架實現後端 API，負責處理前端傳來的請求
+- 完成用戶資料驗證、登入與註冊邏輯，並與資料庫進行交互
+#### 3. LIFF:  
 - 利用 LIFF API，實現與 LINE 平台的整合：
-    - 獲取用戶在選擇 LINE Login 時的資料（如用戶名稱、頭像、LINE ID）。
-    - 獲取用戶的 Access Token，用於後端驗證身份。
+    - 獲取用戶在選擇 LINE Login 時的資料（如用戶名稱、照片URL、LINE User ID）
+    - 獲取用戶的 Access Token，用於後端進行身份驗證
 - 在 LINE 的內建瀏覽器（WebView） 中運行應用，無需離開 LINE 即可完成登入與操作
 
 ---
@@ -78,15 +78,15 @@
 
 🌟 特點:
 1. 技術指標與 AI 結合應用 :
-- 結合技術分析指標（MA、RSI、MACD )、Max drawdown、Sharpe Ratio 和 Maximum Drawdown
-- 訓練 LSTM 模型 
+    - 結合技術分析指標（MA、RSI、MACD )、Max drawdown、Sharpe Ratio 和 Maximum Drawdown
+    - 訓練 LSTM 模型 
 
 2. 程式化交易策略
-- 整合 LSTM 模型進行預測，並搭配Sharpe Ratio、Markov Chain 趨勢分析，自動判斷作為買賣訊號來源
-- 考慮交易成本與滑點，模擬真實交易場景
+    - 整合 LSTM 模型進行預測，並搭配Sharpe Ratio、Markov Chain 趨勢分析，自動判斷作為買賣訊號來源
+    - 考慮交易成本與滑點，模擬真實交易場景
 
 3. 系統建置技術
-- 使用 Jinja2 自動生成報告，結合 Github Actions 每日進行排程實現自動更新
+    - 使用 Jinja2 自動生成報告，結合 Github Actions 每日進行排程實現自動更新
 
 
 ![git](https://github.com/YIFUNLIN/Line_bot/blob/main/images/git.png)
