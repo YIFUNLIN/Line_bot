@@ -41,9 +41,20 @@
 ![LIFF_DB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/LIFF_DB_store.png)
 
 ### 串接股票推薦系統網站 :
-利用 LIFF 進行與 Linebot 的前後端串接
+#### 1. 前端: 
+- 使用 React 框架構建會員登入系統，實現動態渲染與狀態管理。
+- 使用 Axios 與後端 API 進行交互，完成資料傳遞與操作。
+#### 後端: 
+- 使用 Flask 框架實現後端 API，負責處理前端傳來的請求。
+- 完成用戶資料驗證、登入與註冊邏輯，並與資料庫進行交互。
+#### LIFF:  
+- 利用 LIFF API，實現與 LINE 平台的整合：
+    - 獲取用戶在選擇 LINE Login 時的資料（如用戶名稱、頭像、LINE ID）。
+    - 獲取用戶的 Access Token，用於後端驗證身份。
+- 在 LINE 的內建瀏覽器（WebView） 中運行應用，無需離開 LINE 即可完成登入與操作
 
-- Flex message 客製化提供點擊連結
+---
+- 使用 Flex message 客製化 UI 提供點擊介面
 <img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/flex_message.jpg" />
 
 
