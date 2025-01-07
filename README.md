@@ -5,13 +5,17 @@
 - 前端React程式碼: https://github.com/YIFUNLIN/React_Line_bot_project
 - 推薦系統程式碼: https://github.com/YIFUNLIN/stock
   
-本系統提供三大功能:
-1. 財報分析: 輸入股票代號與年份(eg. 2330 112)，即可自動爬找該公司年報並交由AI分析
-2. 推薦系統: 每日進行標的更新，背後透過交易策略、技術指標(Markov chains、RSI等等)自動幫你篩選
+### 🌟 系統簡介:
+設計了一個 **Line Bot** 為使用者提供 **財報分析**、**會員管理系統**、 **股票推薦系統** 與 **即時新聞擷取** 功能。
+
+### 🌟 系統提供三大功能:
+1. 財報分析: 輸入股票代號與年份(eg. 2330 112)，即可自動爬找該公司年報並交由 AI 分析摘要
+2. 推薦系統: 每日進行標的更新，背後透過交易策略，如 MA、RSI、MACD 、Max drawdown、Sharpe Ratio 和 Maximum Drawdown、訓練完的 LSTM 模型 去進行預測以提供交易訊號做為參考
 3. 近況分析: 輸入股票代號(eg. 2330)，即可爬取該股的新聞
+4. 會員登入系統: 儲存用戶資料，提供 SSO 服務與客製化體驗
 
 ### 🌟 驗證功能 🌟
-使用推薦系統時，需要先進行註冊or Line 的 LIFF 驗證才可使用哦 !
+使用推薦系統時，需要先進行 Email 註冊 或 Line Login 驗證才可使用哦 !
 
 ### 🌟 技術 🌟
 1. 前端: React
@@ -20,6 +24,32 @@
 4. 資料庫: MongoDB Atlas
 5. RAG技術: LangChain
 6. API: gpt-4o-mini
+
+---
+### 🌟 開發細項 🌟
+
+1. **前端部分**：
+   - 使用 React 的狀態管理（`useState` 和 `useEffect`）動態渲染登入界面。
+   - 整合 LIFF SDK，實現 LINE 登入和用戶資料獲取。
+   - 使用 Axios 實現 AJAX 請求，與後端 API 進行通信，用於完成註冊的用戶資料的儲存（如 LINE 或 Email 註冊）與登入驗證。Axios 提供了基於 Promise 的非同步請求，簡化了數據序列化和錯誤處理，確保與伺服器的交互高效穩定。
+   - 設計條件渲染邏輯，根據用戶狀態（登入或未登入）顯示不同的內容。
+        - 登入後: 顯示 user 資料，可直接點擊導向推薦系統
+        - 未登入: 則停留該註冊登入的畫面
+
+2. **後端部分**：
+    
+     - 使用 Flask 框架開發出多支 API 去進行後端邏輯的處理，以下針對幾向功能做介紹:
+     1. 即時新聞獲取
+     2. 爬取公司年財報並做RAG進行摘要，這邊利用 LangChain 框架，將財報依段落切割轉成 vector 存入vector DB 中，再依照預先定義好的 query 轉成向量去進行 cosine_similarity，檢索出語意最相關的內容，再將檢索結果餵給 **GPT-4o-mini** 模型，基於語言模型生成能力去構建 **QA Chain**，以自動生成公司年報摘要，為使用者提供精準且高效的財報分析結果，大幅提升用戶決策效率。
+     3. 與 MongoDB 整合，管理用戶資料、財報資料儲存
+     4. 使用 CORS 確保跨來源請求，實現前後端通訊。
+
+3. **整合與測試**：
+   - 測試前端與後端的 API 通信。
+   - 測試 LIFF 平台的初始化與登入流程。
+   - 確保 MongoDB 的資料儲存和查詢功能正常運作。
+   - 模擬用戶互動，測試 LINE Messaging API 的功能。
+   - 利用 Postman 進行 API 的 function Testing
 
 <img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg" />
 
