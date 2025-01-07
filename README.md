@@ -10,8 +10,8 @@
 
 ### 🌟 系統提供四大功能:
 1. 財報分析: 輸入股票代號與年份(eg. 2330 112)，即可自動爬找該公司年報並交由 AI 分析摘要
-2. 推薦系統: 每日進行標的更新，背後透過交易策略，如 MA、RSI、MACD 、Max drawdown、Sharpe Ratio 和 Maximum Drawdown、訓練完的 LSTM 模型 去進行預測以提供交易訊號做為參考
-3. 近況分析: 輸入股票代號(eg. 2330)，即可爬取該股的新聞
+2. 推薦系統: 每日進行標的更新，背後透過交易策略，如 MA、RSI、MACD 、Max drawdown、Sharpe Ratio 和訓練完的 LSTM 模型，去進行預測以提供交易訊號做為參考
+3. 近況分析: 輸入股票代號(eg. 2330)，即可爬取該股的最即時新聞
 4. 會員登入系統: 儲存用戶資料，提供 SSO 服務與客製化體驗
 
 ### 🌟 驗證功能 🌟
@@ -23,7 +23,7 @@
 3. 驗證機制: LIFF (LINE Front-end Framework)
 4. 資料庫: MongoDB Atlas
 5. RAG技術: LangChain
-6. API: gpt-4o-mini
+6. AI: gpt-4o-mini
 
 ---
 ### 🌟 開發細項 🌟
@@ -40,15 +40,15 @@
     
      - 使用 Flask 框架開發出多支 API 去進行後端邏輯的處理，以下針對幾向功能做介紹:
      1. 即時新聞獲取
-     2. 爬取公司年財報並做RAG進行摘要，這邊利用 LangChain 框架，將財報依段落切割轉成 vector 存入vector DB 中，再依照預先定義好的 query 轉成向量去進行 cosine_similarity，檢索出語意最相關的內容，再將檢索結果餵給 **GPT-4o-mini** 模型，基於語言模型生成能力去構建 **QA Chain**，以自動生成公司年報摘要，為使用者提供精準且高效的財報分析結果，大幅提升用戶決策效率。
+     2. 爬取公司年財報並利用 RAG 技術進行精準的摘要，這邊利用 LangChain 框架，將財報依段落切割轉成 vector 存入vector DB 中，再依照預先定義好的 query 轉成向量去 vectir DB 中使用 cosine_similarity 進行相似性比對以檢索出語意最相關的內容，再將檢索結果餵給 **GPT-4o-mini** 模型，基於語言模型生成能力去構建 **QA Chain**，以自動生成公司年報摘要，為使用者提供精準且高效的財報分析結果，大幅提升用戶決策效率。
      3. 與 MongoDB 整合，管理用戶資料、財報資料儲存
      4. 使用 CORS 確保跨來源請求，實現前後端通訊。
 
 3. **整合與測試**：
-   - 測試前端與後端的 API 通信。
+   - 測試前端與後端的 API 通訊。
    - 測試 LIFF 平台的初始化與登入流程。
    - 確保 MongoDB 的資料儲存和查詢功能正常運作。
-   - 模擬用戶互動，測試 LINE Messaging API 的功能。
+   - 模擬用戶操作，測試 LINE Messaging API 的功能。
    - 利用 Postman 進行 API 的 function Testing
 
 <img width="300" alt="image" src="https://github.com/YIFUNLIN/Line_bot/blob/main/images/main.jpg" />
@@ -70,7 +70,7 @@
 3. 若使用者透過LINE 進行登入，會觸發liff.getProfile()，將資料回傳到後端
 ![LIFF_DB](https://github.com/YIFUNLIN/Line_bot/blob/main/images/LIFF_DB_store.png)
 
-### 串接股票推薦系統網站 :
+### 登入系統 :
 #### 1. 前端: 
 - 使用 React 框架構建會員登入系統，實現動態渲染與狀態管理
 - 使用 Axios 與後端 API 進行交互，完成資料傳遞與操作
